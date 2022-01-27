@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 객체 사용하기</title>
+</head>
+<body>
+   
+
+    <script>
+        // function myAbs(x){
+        let myAbs = function(x){//실행함수 = 익명함수
+            if( x < 0)
+                return -x;
+            else
+                return x;
+        }
+
+        //거급제곱 계산 함수 (1*2*2*2)
+        let myPow = function(x,y){
+            let num = 1;
+            for(let i = 0 ; i < y ; i++){
+                //num = num * x;
+                num *= x;
+            }
+            return num;
+        }
+        console.log(myAbs(-5));
+        console.log(myPow(2,3));
+        // 내장 객체와 비교하기
+        console.log(Math.abs(-5));
+        console.log(Math.pow(2,3));
+    </script>
+    
+</body>
+</html>

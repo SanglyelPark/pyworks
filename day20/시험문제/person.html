@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 정의하고 사용하기</title>
+</head>
+<body>
+    <script>
+        //1개의 객체 만들때 중괄호({}) 사용
+        //let person = ["손흥민", 30 , false] - 배열
+        let person = {
+            name : "손흥민",
+            age : 30,
+            isMerried : false,
+
+            play: function(){
+                alert("골을 넣어요!!")
+            }
+        }
+
+        //person객체의 사용 - 객체이름.속성
+        console.log("이름 : " + person.name);
+        console.log("나이 : " + person.age);
+        console.log("결혼유무 : " + person.isMerried);
+        person.play();
+    </script>
+</body>
+</html>
