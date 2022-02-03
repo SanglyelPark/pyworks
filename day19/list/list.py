@@ -10,6 +10,7 @@ for i in a:
     a2.append(i)
 print("a2 =", a2)
 
+# 홀수 저장
 for i in a:
     if i % 2 ==1:
         a3.append(i)
