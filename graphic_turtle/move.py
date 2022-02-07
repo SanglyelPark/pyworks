@@ -25,6 +25,9 @@ for i in range(0,3):
     turtle.left(120)  # left(각도)
 
 turtle.color("green")
-turtle.circle(50)
+turtle.circle(58)
+turtle.forward(100)
+turtle.circle(58)
+# turtle.right(100)
 
 turtle.mainloop()

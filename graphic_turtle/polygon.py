@@ -10,4 +10,5 @@ def polygon(n):
 t.shape()
 polygon(5)
 polygon(3)
+polygon(6)
 t.mainloop()
