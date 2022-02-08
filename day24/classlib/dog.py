@@ -14,4 +14,4 @@ print(dog1.name) #dog1만 유일
 print(Dog.type) #클래스 이름으로 직접 접근
 
 print(dog2.name) #dog2만 유일
-print(dog2.type)
+print(Dog.type)
