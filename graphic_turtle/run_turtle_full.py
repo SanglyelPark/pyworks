@@ -13,20 +13,52 @@ def turn_down():
 def turn_left():
     t.setheading(180)
 
+def start():
+    global playing
+    if playing == False:
+        playing = True  # 게임 시작
+        t.clear()   # 화면지우기
+        play()   # play 함수 호출
+
+def message(m1,m2):
+    t.clear()
+    t.goto(0,100)
+    t.write(m1,False,"center",("",20))
+    t.goto(0, -100)
+    t.write(m2, False, "center", ("", 16))
+    t.home()
+
 def play():
-    t.forward(10)  # 10 픽셀 이동
+    global playing
+    global score
+
+    if playing:
+        t.ontimer(play,100)
+
+    t.forward(10)
     angle = te.towards(t.pos())
-    te.setheading(angle) # 주인공 거북이쪽을 바라봄
-    te.forward(9)
+    te.setheading(angle)
+    speed = score + 5
+    te.forward(speed)  #적 거북이 속도
 
-    if t.distance(te) >= 12: # 주인공 거북이가 적 거북이와의 거리가 12이상일때
-        t.ontimer(play, 100)  # 0.1 초 간격으로 play 콜백
-
-    # 주인공 거북이가 먹이에 닿으면 새로운 위치로 이동
+    # 먹이에 닿으면
     if t.distance(tf) < 12:
-        x = random.randint(-230, 230) #
+        score += 1
+        t.write(score)
+        x = random.randint(-230, 230)
         y = random.randint(-230, 230)
         tf.goto(x,y)
+
+    #적 거북이에 닿으면
+    if t.distance(te) < 12:
+        text = "Score : " + str(score)
+        message("Game over",text)
+        playing = False
+        score = 0
+
+# 점수수와 게 스위치
+playing = False
+score = 0
 
 # 주인공 거북이
 t.shape("turtle")
@@ -57,7 +89,9 @@ t.onkeypress(turn_right, "Right")
 t.onkeypress(turn_up, "Up")
 t.onkeypress(turn_down, "Down")
 t.onkeypress(turn_left, "Left")
+t.onkeypress(start, "space")
+
 t.listen()
-play()
+message("Turtle Run","[Space]")
 
 t.mainloop()
