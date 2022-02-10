@@ -3,15 +3,13 @@ import random
 
 def turn_right():
     t.setheading(0)
-
 def turn_up():
     t.setheading(90)
-
 def turn_down():
     t.setheading(270)
-
 def turn_left():
     t.setheading(180)
+
 
 def start():
     global playing
@@ -23,7 +21,7 @@ def start():
 def message(m1,m2):
     t.clear()
     t.goto(0,100)
-    t.write(m1,False,"center",("",20))
+    t.write(m1,False,"center",("",20))   # 메세지 출력 중앙에 20크기
     t.goto(0, -100)
     t.write(m2, False, "center", ("", 16))
     t.home()
@@ -31,13 +29,13 @@ def message(m1,m2):
 def play():
     global playing
     global score
-
     if playing:
         t.ontimer(play,100)
 
     t.forward(10)
-    angle = te.towards(t.pos())
-    te.setheading(angle)
+    if random.randint(1,5) == 2:  # 1~5 중에서 뽑은 수가 2일 확률(20%)
+        angle = te.towards(t.pos())     # 내 거북이의 각도를 적색 거북이에게 전달
+        te.setheading(angle)
     speed = score + 5
     te.forward(speed)  #적 거북이 속도
 
