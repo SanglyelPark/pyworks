@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<!--urlfor(경로) 함수 사용-->
+</head>
+<body>
+    <div id="container">
+        <h2> 계절 : {{ season }}</h2>
+    </div>
+    <ul>
+        {% for s in seasons %}
+        <li>
+            {{ s }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

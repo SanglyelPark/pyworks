@@ -20,7 +20,7 @@ class Customer:
 
 
 if __name__ == "__main__":
-    silver = Customer(1001, "정국")
+    silver = Customer(1001, "정국")  # 클래스를 부르면 자동으로 __init__ __str__ 실행된다.
     price = 10000
     cost = silver.calc_price(price)
     print(silver.getname() + "님의 구매 비용은 " + str(cost) + "원 입니다.")
