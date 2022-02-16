@@ -10,8 +10,19 @@
     <div id="container">
         <h2> loop.index 예제</h2>
         <ul>
+            <p> loop.index 순차 정렬</p>
             {% for item in items %}
             <li> {{ loop.index }} - {{item}}</li>
+            {% endfor %}
+            <br>
+            <p> loop.revindex 역순 정렬</p>
+            {% for item in items %}
+            <li> {{ loop.revindex }} - {{item}}</li>
+            {% endfor %}
+            <br>
+            <p> loop.index0 0부터 순차 정렬</p>
+            {% for item in items %}
+            <li> {{ loop.index0 }} - {{item}}</li>
             {% endfor %}
         </ul>
 
