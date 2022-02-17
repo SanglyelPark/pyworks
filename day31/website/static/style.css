@@ -1,3 +1,4 @@
+/* index 스타일 */
 #container{
     width: 1000px;
     margin : 0 auto;
@@ -6,4 +7,17 @@
 h1{color: #00f;}
 p{font-size: 1.2em}
 ul{text-align: center; list-style: none}
-ul li{font-size: 1em;}
+ul li{font-size: 1em; margin: 15px}
+
+/* register 스타일 */
+form{width:400px; margin: 0 auto;}
+label{width:100px; float: left}
+}
+
+/* memberlist 스타일 */
+table{margin: 0 auto;}
+table, th, td{border: 1px solid #ccc;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px 20px;
+    }

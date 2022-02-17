@@ -11,6 +11,14 @@
         <h1>메인 페이지입니다.</h1>
         <h2>주소 표시줄에 아래의 경로를 입력하세요</h2>
         <p> 127.0.0.1:5000 -> index 페이지 로딩</p>
+        <p> 127.0.0.1:5000/season 입력 --> season 페이지 로딩</p>
+        <p> 127.0.0.1:5000/loop_index 입력 --> loop_index 페이지 로딩</p>
+        <p> 127.0.0.1:5000/register 입력 --> 회원가입 페이지 로딩</p>
+        <p> 127.0.0.1:5000/even_odd 입력 --> 짝수/홀수 페이지 로딩</p>
+        <div>
+              <img src="{{ url_for('static',filename='coffee-gray.jpg')}}" id="pic">
+        </div>
     </div>
+    <script src="{{ url_for('static', filename='main_js.js')}}"></script>
 </body>
 </html>

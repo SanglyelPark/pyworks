@@ -11,18 +11,20 @@
         <h2> loop.index 예제</h2>
         <ul>
             <p> loop.index 순차 정렬</p>
-            {% for item in items %}
-            <li> {{ loop.index }} - {{item}}</li>
-            {% endfor %}
+                {% for item in items %}
+                    {% if loop.index < 3 %}
+                    <li> {{ loop.index }} 번 요소 - {{item}}</li>
+                    {% endif %}
+                    {% endfor %}
             <br>
             <p> loop.revindex 역순 정렬</p>
             {% for item in items %}
-            <li> {{ loop.revindex }} - {{item}}</li>
+            <li> {{ loop.revindex }} 번 요소 - {{item}}</li>
             {% endfor %}
             <br>
             <p> loop.index0 0부터 순차 정렬</p>
             {% for item in items %}
-            <li> {{ loop.index0 }} - {{item}}</li>
+            <li> {{ loop.index0 }} 번 요소 - {{item}}</li>
             {% endfor %}
         </ul>
 
