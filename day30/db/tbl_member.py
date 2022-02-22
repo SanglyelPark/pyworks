@@ -34,6 +34,7 @@ def select_member():
     cur.execute(sql)
     rs = cur.fetchall()
     print(rs)
+    conn.close()
 
 # create_table()
 #insert_member()
