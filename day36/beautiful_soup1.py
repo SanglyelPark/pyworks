@@ -23,3 +23,5 @@ soup = BeautifulSoup(html_str, "html.parser")
 # 선택자로 찾기 - 딕셔너리 형태
 ul = soup.find('ul', attrs={'class':'item'})   #처음 나오는 ul 태그 및 하위태그 검색
 print(ul)
+print(ul.text)
+
